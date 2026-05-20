@@ -4,6 +4,9 @@ jobs:
   first_job: 
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
       - name: welcome message
         run: echo "My first github actions job"
         
@@ -12,3 +15,4 @@ jobs:
 
       - name: Read File
         run: cat README.md
+      # you need to allow the workflow in order to explicitly download the files and use them. other than the files github actions do not allow you to read or write otside the repo
